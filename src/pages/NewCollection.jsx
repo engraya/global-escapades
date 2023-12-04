@@ -23,7 +23,11 @@ function CreateCollection() {
 
   return (
     <div>
-    <h3 className='text-center'>Collection Form</h3>
+    <section className=" dark:bg-gray-900">
+      <div className="px-4 mx-auto max-w-screen-xl text-center lg:py-1">
+    <h6 className="mb-4 text-2xl font-extrabold text-cyan-600 tracking-tight py-3 leading-none md:text-3xl lg:text-3xl dark:text-white">Create Collection</h6>
+  </div>
+  </section>
       <CollectionForm onAddCollection={onAddCollectionHandler}/>
     </div>
   )

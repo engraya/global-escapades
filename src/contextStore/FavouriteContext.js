@@ -1,35 +1,48 @@
 import { createContext, useState } from "react";
 
 const contextObject = {
-    favouritesCollectons: [],
-    totalFavouritesCollections : 0.
+    favouritesCollections: [],
+    totalFavouritesCollections : 0,
+    addFavourite : (favouriteCollection) => {},
+    removeFavourite : (collectionId) => {},
+    collectionIsFavourite : (collectionId) => {}
 }
 
 const FavouritesContext = createContext(contextObject);
 
-function FavouritesContextProvider(props) {
+export function FavouritesContextProvider(props) {
 
-    const [userFavourites, setUserFvaourites] = useState([]);
+    const [userFavourites, setUserFavourites] = useState([]);
 
-    const addFavouritesHandler = () => {
+    const addFavouritesHandler = (favouriteCollection) => {
+        setUserFavourites((prevUserFavourites) => {
+            return prevUserFavourites.concat(favouriteCollection)
+        });
+    }
+
+    const removeFavouritesHandler = (collectionId) => {
+        setUserFavourites(prevUserFavourites => {
+            return prevUserFavourites.filter(collection => collection.id !== collectionId);
+        })
 
     }
 
-    const removeFavouritesHandler = () => {
-
+    const collectionIsFvaouriteHandler = (collectionId) => {
+        return userFavourites.some(collection => collection.id === collectionId)
     }
-
-    const collectionIsFvaouriteHandler = () => {
-        
-    }
-
 
     const collectionsContext = {
         favouritesCollectons : userFavourites,
         totalFavouritesCollections : userFavourites.length,
+        addFavourite : addFavouritesHandler,
+        removeFavourite : removeFavouritesHandler,
+        collectionIsFavourite : collectionIsFvaouriteHandler,
     }
 
     return <FavouritesContext.Provider value={collectionsContext}>
         {props.children}
     </FavouritesContext.Provider>
 }
+
+
+export default FavouritesContext;

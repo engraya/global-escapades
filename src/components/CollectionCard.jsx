@@ -1,11 +1,32 @@
 import React from 'react'
-import  image from '../image.jpg'
 import { IoHeartSharp } from "react-icons/io5";
-
-
+import { useContext } from 'react';
+import FavouritesContext from '../contextStore/FavouriteContext';
 
 
 function CollectionCard(props) {
+  const favouritesCollectionContext = useContext(FavouritesContext);
+
+  const collectionIsFavourite = favouritesCollectionContext.collectionIsFavourite(props.id)
+
+  const toggleCollectionFavouriteStatusHandler = () => {
+    if (collectionIsFavourite) {
+      favouritesCollectionContext.removeFavourite(props.id);
+    } else {
+      favouritesCollectionContext.addFavourite({
+        id : props.id,
+        title : props.title,
+        image : props.image,
+        continent : props.continent,
+        country : props.country,
+        description : props.description
+      })
+    }
+
+  }
+
+
+
   return (
     <div className='flex flex-wrap m-5 space-x-4 text-center'>
       <div className="max-w-sm border border-gray-200 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 rounded-lg dark:bg-gray-800 dark:border-gray-700">
@@ -36,7 +57,7 @@ function CollectionCard(props) {
               <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
             </svg>
           </div>
-          <button type="button" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><IoHeartSharp /></button>
+          <button onClick={toggleCollectionFavouriteStatusHandler} type="button" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">{collectionIsFavourite ? <IoHeartSharp /> : 'Remove From Favourites'}</button>
         </div>
       </div>
     </div>
