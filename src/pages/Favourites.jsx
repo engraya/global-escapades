@@ -10,9 +10,9 @@ function Favourites() {
   let favouritePageContent;
 
   if (favouritesCollectionsContext.totalFavouritesCollections === 0) {
-    favouritePageContent =     <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">No Available Favourites Collections.....!!!!</p> 
+    favouritePageContent = <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">No Available Favourites Collections.....!!!!</p> 
   } else {
-    favouritePageContent =     <CollectionList collections={favouritesCollectionsContext.favouritesCollections}/>
+    favouritePageContent = <CollectionList collections={favouritesCollectionsContext.favouritesCollections}/>
   }
 
 
