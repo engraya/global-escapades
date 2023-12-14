@@ -16,7 +16,7 @@ function CreateCollection() {
           'Content-Type' : 'application/json'
         }
        }).then(() => {
-        navigate('/collections');
+        navigate('/destinations');
        })
   }
 
@@ -24,7 +24,7 @@ function CreateCollection() {
     <div>
     <section className=" dark:bg-gray-900">
       <div className="px-4 mx-auto max-w-screen-xl text-center lg:py-1">
-    <h6 className="mb-4 text-2xl font-extrabold text-cyan-600 tracking-tight py-3 leading-none md:text-3xl lg:text-3xl dark:text-white">Create Collection</h6>
+    <h6 className="mb-4 text-2xl font-extrabold text-cyan-600 tracking-tight py-3 leading-none md:text-3xl lg:text-3xl dark:text-white">New Destination</h6>
   </div>
   </section>
       <CollectionForm onAddCollection={onAddCollectionHandler}/>

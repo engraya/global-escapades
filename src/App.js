@@ -17,9 +17,9 @@ function App() {
     <NavBar/>
     <Routes>
       <Route path='/' element={<HomePage/>}></Route>
-      <Route path='/new-collection' element={<CreateCollection/>}></Route>
-      <Route path='/collections' element={<AllCollections/>}></Route>
-      <Route path='/collections/:collectionId' element={<CollectionDetail/>}></Route>
+      <Route path='/new-destination' element={<CreateCollection/>}></Route>
+      <Route path='/destinations' element={<AllCollections/>}></Route>
+      <Route path='/destinations/:collectionId' element={<CollectionDetail/>}></Route>
       <Route path='/gallery' element={<Gallery/>}></Route>
       <Route path='/favourites' element={<Favourites/>}></Route>
     </Routes>

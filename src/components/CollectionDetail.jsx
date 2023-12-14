@@ -6,7 +6,7 @@ import ImageDownloader from './ImageDownloader';
 import { Link } from 'react-router-dom';
 
 
-function CollectionDetail(props) {
+function CollectionDetail() {
   const { collectionId } = useParams()
   const [isLoading, setIsLoading] = useState(true);
   const [collection, setcollection] = useState({
@@ -21,7 +21,6 @@ function CollectionDetail(props) {
   useEffect(() => {
     setIsLoading(true)
     axios.get(`https://react-collections-66c79-default-rtdb.firebaseio.com/collections/${collectionId}.json`).then((response) => {
-      console.log(response.data)
       setcollection(response.data)
       setIsLoading(false)
     }).catch((error) => {
@@ -54,7 +53,7 @@ function CollectionDetail(props) {
     <section className=" dark:bg-gray-900">
     
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center ">
-      <Link to="/collections">
+      <Link to="/destinations">
       <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Back</button>
       </Link>
 

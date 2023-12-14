@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import icon from '../icon1.png';
 import { useContext } from 'react';
 import FavouritesContext from '../contextStore/FavouriteContext';
+import { FaGithub } from "react-icons/fa";
 
 function NavBar() {
+  const repoGithubUrl = "https://github.com/engraya/global-escapades"
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -33,6 +35,7 @@ function NavBar() {
           </Link>
 
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center">
+          <Link to={repoGithubUrl} target='_blank'><button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-purple-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"><FaGithub /></button></Link>
             <DarkMode />
             <button
               onClick={toggleMobileMenu}
@@ -62,7 +65,7 @@ function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link to="/collections">
+                <Link to="/destinations">
                   <a onClick={closeMobileMenu} className="block py-2 px-3 text-cyan-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-900 md:p-0 md:dark:hover:text-cyan-900 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Destinations</a>
                 </Link>
               </li>
@@ -80,14 +83,18 @@ function NavBar() {
                     </span>
                   </button>
                 </Link>
-                <Link to="/new-collection">
+                <Link to="/new-destination">
                   <button onClick={closeMobileMenu} type="button" className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-3 mb-1">
                     <FaPlus />
                   </button>
                 </Link>
+                
               </li>
+              
             </ul>
+            
           </div>
+          
         </div>
       </nav>
     </div>
