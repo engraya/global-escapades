@@ -1,5 +1,6 @@
 import React from 'react'
 import { RiDownloadCloud2Fill } from "react-icons/ri";
+import downloadPic from '../images/download.svg'
 
 function ImageDownloader({ imageUrl, filename }) {
     const handleDownloadFunc = () => {
@@ -11,7 +12,7 @@ function ImageDownloader({ imageUrl, filename }) {
 
   return (
     <div>
-    <button onClick={handleDownloadFunc}><RiDownloadCloud2Fill /></button>
+    <button onClick={handleDownloadFunc}><img src={downloadPic} style={{height:"28px" }} alt="" /></button>
     </div>
   )
 }

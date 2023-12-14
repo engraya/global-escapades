@@ -4,10 +4,10 @@ import AllCollections from './pages/AllCollections';
 import CreateCollection from './pages/NewCollection';
 import Favourites from './pages/Favourites';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import About from './pages/About';
 import HomePage from './pages/HomePage';
 import Footer from './layouts/Footer';
 import CollectionDetail from './components/CollectionDetail';
+import Gallery from './pages/Gallery';
 
 
 
@@ -20,7 +20,7 @@ function App() {
       <Route path='/new-collection' element={<CreateCollection/>}></Route>
       <Route path='/collections' element={<AllCollections/>}></Route>
       <Route path='/collections/:collectionId' element={<CollectionDetail/>}></Route>
-      <Route path='/about' element={<About/>}></Route>
+      <Route path='/gallery' element={<Gallery/>}></Route>
       <Route path='/favourites' element={<Favourites/>}></Route>
     </Routes>
     <Footer/>

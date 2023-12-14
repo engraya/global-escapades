@@ -1,6 +1,5 @@
 import React from 'react'
 import CollectionForm from '../components/CollectionForm'
-import { json } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function CreateCollection() {
@@ -17,7 +16,7 @@ function CreateCollection() {
           'Content-Type' : 'application/json'
         }
        }).then(() => {
-        navigate('/all-meetups');
+        navigate('/collections');
        })
   }
 

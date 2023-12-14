@@ -4,7 +4,7 @@ import CollectionCard from './CollectionCard'
 function CollectionList(props) {
   return (
     <div className='items-center justify-center grid grid-cols-2 md:grid-cols-4 gap-4'>
-    {props.collection.map(collection => (
+    {props.collections && props.collections.map(collection => (
         <CollectionCard 
         key={collection.id}
         id={collection.id} 

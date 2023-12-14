@@ -10,7 +10,7 @@ function Favourites() {
   let favouritePageContent;
 
   if (favouritesCollectionsContext.totalFavouritesCollections === 0) {
-    favouritePageContent = <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">No Available Favourites Collections.....!!!!</p> 
+    favouritePageContent = <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">No Available Favourites Destinations.....!!!!</p> 
   } else {
     favouritePageContent = <CollectionList collections={favouritesCollectionsContext.favouritesCollections}/>
   }
@@ -18,14 +18,17 @@ function Favourites() {
 
   return (
     <div>
-    <section className=" dark:bg-gray-900">
-      <div className="px-4 mx-auto max-w-screen-xl text-center lg:py-8">
-    <h6 className="mb-4 text-2xl font-extrabold text-cyan-600 tracking-tight leading-none md:text-3xl lg:text-3xl dark:text-white">Favourites Collections</h6>
+
+      <div className="px-4 mx-auto max-w-screen-xl text-center lg:py-8 m-20">
+      <div className="dark:bg-gray-800 py-8">
+      <div className="max-w-screen-xl mx-auto text-center">
+        <h3 className="text-3xl md:text-4xl font-extrabold dark:text-white mb-4">Favourite Destinations</h3>
+      </div>
+    </div>
     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"> 
       {favouritePageContent}
     </div>
   </div>
-  </section>
     </div>
   )
 }
