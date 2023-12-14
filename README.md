@@ -1,6 +1,6 @@
-![Screenshot (1246)](https://github.com/engraya/global-escapades/assets/115407251/52320a61-29f4-46b7-8eb2-ac926050c2f7)
-![Screenshot (1245)](https://github.com/engraya/global-escapades/assets/115407251/ecba469a-a21a-4724-b1e1-a283d14b6b21)
 
+![Screenshot (1247)](https://github.com/engraya/global-escapades/assets/115407251/ab5316b0-8430-4556-8997-e4f0d2f1bafe)
+![Screenshot (1248)](https://github.com/engraya/global-escapades/assets/115407251/e6452b8a-2036-4955-ae61-354c483d3fa2)
 
 
 # Getting Started with Create React App
