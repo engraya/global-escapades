@@ -1,3 +1,8 @@
+![Screenshot (1246)](https://github.com/engraya/global-escapades/assets/115407251/52320a61-29f4-46b7-8eb2-ac926050c2f7)
+![Screenshot (1245)](https://github.com/engraya/global-escapades/assets/115407251/ecba469a-a21a-4724-b1e1-a283d14b6b21)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
